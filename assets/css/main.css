@@ -3129,55 +3129,66 @@ input, select, textarea {
 						margin-bottom: 2em;
 					}
 
-			/* --- SOLUÇÃO FINAL MOBILE --- */
+/* --- AJUSTE TOTAL DO MENU MOBILE (PÓS-IMAGENS) --- */
 @media screen and (max-width: 736px) {
-    /* 1. FORÇAR O MENU A APARECER contra o js */
+    /* 1. Alinhamento Global e Espaçamento */
+    #header {
+        min-height: 60vh !important; /* Aumenta um pouco para respirar */
+        display: flex !important;
+        flex-direction: column !important;
+        justify-content: center !important;
+        align-items: center !important;
+        padding: 2em 1em !important;
+    }
+
+    .logo-button img { height: 90px !important; margin-bottom: 1em !important; }
+    #header h1 span { font-size: 1.4em !important; letter-spacing: 2px !important; }
+    #header p { font-size: 0.9em !important; margin-top: 5px !important; }
+
+    /* 2. FORÇAR MENU A SER UMA LISTA VERTICAL LIMPA */
     #nav {
-        display: block !important;
-        visibility: visible !important;
-        opacity: 1 !important;
         position: relative !important;
         top: 0 !important;
         width: 100% !important;
-        background: #2E5A27 !important; /* Verde da JM Jardins */
-        padding: 10px 0 !important;
-        transform: none !important; /* Anula animações do JS que escondem o menu */
+        display: block !important;
+        background: rgba(46, 90, 39, 0.95) !important; /* Verde JM Jardins Semi-transparente */
+        margin-top: 2em !important;
+        padding: 15px 0 !important;
+        border-radius: 8px !important; /* Cantos arredondados */
+        visibility: visible !important;
+        opacity: 1 !important;
     }
 
     #nav ul {
         display: flex !important;
-        flex-direction: column !important;
+        flex-direction: column !important; /* Empilha os links */
         align-items: center !important;
-        visibility: visible !important;
-        opacity: 1 !important;
+        list-style: none !important;
+        margin: 0 !important;
+        padding: 0 !important;
     }
 
     #nav ul li {
         display: block !important;
+        width: 100% !important;
+        text-align: center !important;
         padding: 10px 0 !important;
-        width: 100%;
-        text-align: center;
-        border-bottom: 1px solid rgba(255,255,255,0.1);
+        border-bottom: 1px solid rgba(255,255,255,0.1) !important; /* Linha separadora suave */
     }
 
-    /* 2. CORRIGIR A GALERIA (Fotos não podem ser fixas) */
-    .galeria-fundo {
-        padding: 2em 10px !important;
+    #nav ul li:last-child {
+        border-bottom: none !important; /* Remove linha no último link */
     }
 
-    .galeria-fundo img {
-        width: 90% !important; /* Ocupa quase a largura toda do tlm */
-        height: auto !important; /* Altura ajusta-se para não esmagar */
-        max-width: 400px; /* Não deixa crescer demais em tablets */
-        margin: 15px auto !important;
-        display: block !important; /* Uma por baixo da outra */
+    #nav ul li a {
+        display: block !important;
+        color: #ffffff !important;
+        font-family: 'Montserrat', sans-serif !important;
+        font-weight: 700 !important;
+        text-transform: uppercase !important;
+        text-decoration: none !important;
+        font-size: 1em !important;
+        letter-spacing: 1px !important;
     }
-
-    /* Ajuste do Header para não ocupar o ecrã todo */
-    #header {
-        min-height: 50vh !important;
-        padding: 2em 1em !important;
-    }
-    .logo-button img { height: 100px !important; }
 }
 	}
