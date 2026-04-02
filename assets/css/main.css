@@ -3129,44 +3129,51 @@ input, select, textarea {
 						margin-bottom: 2em;
 					}
 
-					/* --- ADAPTAÇÃO PARA TELEMÓVEL (MOBILE) --- */
-@media screen and (max-width: 768px) {
-    #header {
-        min-height: 70vh !important;
-        padding: 40px 20px !important;
+			/* --- AJUSTES PARA TELEMÓVEL (FORÇAR MENU) --- */
+    @media screen and (max-width: 736px) {
+        #header { 
+            min-height: 70vh !important; 
+            padding: 2em 1em !important; 
+        }
+        
+        .logo-center img { 
+            height: 100px !important; 
+        }
+
+        #header h1 a { 
+            font-size: 1.3em !important; 
+            letter-spacing: 1px; 
+        }
+
+        /* ISTO FAZ O MENU APARECER */
+        #nav { 
+            position: relative !important; 
+            top: 0 !important; 
+            background: #2E5A27 !important; /* Verde da empresa */
+            display: block !important; /* Força a aparecer */
+            visibility: visible !important;
+            opacity: 1 !important;
+        }
+
+        #nav ul { 
+            display: flex !important; 
+            flex-direction: column !important; 
+            padding: 10px 0 !important;
+            list-style: none !important;
+            margin: 0 !important;
+        }
+
+        #nav ul li { 
+            display: block !important;
+            padding: 10px 0 !important; 
+            border-bottom: 1px solid rgba(255,255,255,0.1) !important;
+        }
+        
+        #nav ul li a {
+            display: block !important;
+            font-size: 1em !important;
+        }
+
+        #nav ul li:last-child { border: none !important; }
     }
-
-    .logo-center img {
-        height: 120px !important;
-    }
-
-    #nav {
-        position: relative !important;
-        top: 0 !important;
-        background: #222 !important; /* Fundo escuro para o menu no tlm */
-    }
-
-    #nav ul {
-        display: block !important;
-        text-align: center;
-    }
-
-    #nav ul li {
-        display: block !important;
-        border-bottom: 1px solid rgba(255,255,255,0.1);
-        padding: 10px 0;
-    }
-
-    /* Forçar as colunas a ficarem uma por cima da outra */
-    .row > * {
-        width: 100% !important;
-        margin-left: 0 !important;
-        margin-bottom: 20px;
-    }
-}
-
-					.carousel article .image {
-						margin-bottom: 2em;
-					}
-
 	}
