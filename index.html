@@ -1,13 +1,11 @@
 <!DOCTYPE html>
 <html lang="pt">
 <head>
-<meta charset="UTF-8">
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>JM Jardins - Home</title>
+    <title>JM Jardins - Home</title>
 
-
-    <link rel="favicon" sizes="160x160" href="favicom/favicon-16x16.png">
-    
+    <link rel="icon" type="image/png" sizes="16x16" href="favicom/favicon-16x16.png">
     
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="assets/css/main.css">
@@ -16,18 +14,17 @@
 <style>
     /* fundo e tirar o roxo q vinha no template */
     #header {
-background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('img/image jardim.jpg') !important; 
-/* background-color: purple; nao usar fica feio */
+        background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('img/image jardim.jpg') !important; 
         background-size: cover !important;
         background-position: center !important;
-background-attachment: fixed !important;
+        background-attachment: fixed !important;
         min-height: 100vh;
         display: flex;
         justify-content: center;
-    flex-direction: column;
+        flex-direction: column;
         align-items: center;
         border: none !important;
-    margin-bottom: 0 !important;
+        margin-bottom: 0 !important;
         padding: 0 !important;
     }
 
@@ -58,10 +55,10 @@ background-attachment: fixed !important;
     }
 
     #header h1 a {
-    font-size: 2.0em; 
+        font-size: 2.0em; 
         color: #ffffff !important;
-    letter-spacing: 4px;
-    font-weight: 900; 
+        letter-spacing: 4px;
+        font-weight: 900; 
         text-decoration: none; border: none !important;
     }
 
@@ -100,9 +97,44 @@ background-attachment: fixed !important;
         margin: 0 auto !important;
         text-transform: uppercase;
         text-shadow: 2px 2px 4px rgba(0,0,0,0.8);
-        /* flex no p tbm pra garantir q n mexe */
         display: flex; flex-direction: column; justify-content: center; align-items: center;
         border: none !important; padding: 0 !important; margin-bottom: 0 !important;
+    }
+
+    /* --- AJUSTES PARA TELEMÓVEL (MOBILE) --- */
+    @media screen and (max-width: 736px) {
+        #header { 
+            min-height: 80vh !important; 
+            padding: 2em 1em !important; 
+        }
+        
+        .logo-center img { 
+            height: 120px !important; 
+        }
+
+        #header h1 a { 
+            font-size: 1.4em !important; 
+            letter-spacing: 2px; 
+        }
+
+        #nav { 
+            position: relative !important; 
+            top: 0 !important; 
+            background: rgba(0,0,0,0.85) !important; 
+        }
+
+        #nav ul { 
+            display: flex; 
+            flex-direction: column; 
+            padding: 10px 0;
+        }
+
+        #nav ul li { 
+            padding: 5px 0; 
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+        
+        #nav ul li:last-child { border: none; }
     }
 </style>
 </head>
