@@ -10,19 +10,19 @@
     <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
     
 <style>
-    /* header copiado das outras pags */
+    /* --- ESTRUTURA TOPO (PADRÃO JM JARDINS) --- */
     #header {
-background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('img/image jardim.jpg') !important; 
+        background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('img/image jardim.jpg') !important; 
         background-size: cover !important;
         background-position: center !important;
-background-attachment: fixed !important;
+        background-attachment: fixed !important;
         min-height: 50vh; 
         display: flex;
         justify-content: center;
-    flex-direction: column;
+        flex-direction: column;
         align-items: center;
         border: none !important;
-margin-bottom: 0 !important;
+        margin-bottom: 0 !important;
         padding: 0 !important;
     }
 
@@ -35,108 +35,83 @@ margin-bottom: 0 !important;
         width: 100%; z-index: 100;
     }
 
+    #nav ul { list-style: none; margin: 0; padding: 0; text-align: center; }
+    #nav ul li { display: inline-block; margin: 0 15px; }
+
     #nav ul li a {
         color: #ffffff !important;
         font-family: 'Montserrat', sans-serif !important; font-weight: 700;
         text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+        text-decoration: none;
     }
 
-    #header h1, #header p {
+    #header h1, #header h1 span, #header p {
         color: #ffffff !important;
         margin: 0 !important; text-transform: uppercase; 
         font-family: 'Montserrat', sans-serif !important; 
         text-shadow: 2px 2px 4px rgba(0,0,0,0.7);
+        text-align: center;
     }
 
-    #header p {
-        letter-spacing: 2px; font-size: 1.1em;
-        margin-top: 10px !important; font-weight: 400;
-    }
+    #header h1 span { font-size: 2.0em; letter-spacing: 4px; font-weight: 900; }
+    #header p { letter-spacing: 2px; font-size: 1.1em; margin-top: 10px !important; font-weight: 400; }
 
-    /* logo botao centrado */
-    .logo-center { margin: 0 auto 1.5em auto; display: block; }
+    .logo-center { margin: 0 auto 1.5em auto; display: block; text-align: center; }
     .logo-button img { width: auto; height: 180px; }
 
-    #header h1 span { 
-        font-size: 2.0em; color: #ffffff !important; 
-        letter-spacing: 4px; font-weight: 900; 
-        text-shadow: 2px 2px 4px rgba(0,0,0,0.7); 
-    }
+    /* --- SECÇÃO HISTÓRIA --- */
+    .historia-fundo { background-color: #ffffff; padding: 4em 0; text-align: center; }
 
-    /* fundo da secção da historia */
-    .historia-fundo {
-        background-color: #ffffff; 
-        padding: 4em 0;
-        text-align: center;
-    }
-
-    /* Estilos pa logo da empresa (sem bordas redondas) */
-    .logo-sobre {
-        text-align: center;
-        margin-bottom: 15px;
-    }
-
-    .logo-sobre img {
-        height: 120px;
-        width: auto;
-    }
-
-    /* Estilos pa foto redonda tipo redonde do Sr. Jose */
-    .perfil-foto {
-        text-align: center;
-        margin-bottom: 15px;
-    }
-
+    .perfil-foto { text-align: center; margin-bottom: 25px; }
     .perfil-foto img {
-        width: 180px; 
-        height: 180px; 
-        object-fit: cover; 
-        border-radius: 50%; /* AQUI FICA REDONDO */
-        border: 5px solid #eaeaea; 
-        box-shadow: 0 4px 10px rgba(0,0,0,0.1); 
+        width: 200px; height: 200px; object-fit: cover; 
+        border-radius: 50%; border: 5px solid #2E5A27; /* Borda verde po tema */
+        box-shadow: 0 4px 15px rgba(0,0,0,0.2); 
     }
 
-    /* caixa pa alinhar o texto direitinho */
     .caixa-texto {
-        max-width: 800px;
-        margin: 0 auto;
-        text-align: left; 
-        font-family: 'Montserrat', sans-serif;
-        color: #444;
-        line-height: 1.8; 
-        font-size: 1.1em;
-        padding: 0 20px;
+        max-width: 800px; margin: 0 auto; text-align: left; 
+        font-family: 'Montserrat', sans-serif; color: #444;
+        line-height: 1.8; font-size: 1.1em; padding: 0 25px;
     }
 
-    .caixa-texto p {
-        margin-bottom: 20px;
-    }
+    h2, h3 { text-transform: uppercase !important; color: #2E5A27; }
 
-    h2, h3, #footer p {
-        text-transform: uppercase !important;
-    }
-
-    /* footer do costume */
+    /* --- FOOTER --- */
     #footer {
-        border: none !important;
         background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('img/image jardim.jpg') !important;
-        background-size: cover !important;
-        padding: 4em 0 !important;
-        background-position: center !important; background-attachment: fixed !important;
-        display: flex; flex-direction: column; justify-content: center; align-items: center;
-        text-align: center !important;
+        background-size: cover !important; padding: 4em 0 !important;
+        background-position: center !important; text-align: center !important;
     }
 
     #footer p {
-        color: #ffffff !important; font-size: 1em !important;
-        font-family: 'Montserrat', sans-serif !important;
-        font-weight: 700 !important; margin: 5px auto !important;
-        text-shadow: 2px 2px 4px rgba(0,0,0,0.8);
-        border: none !important; padding: 0 !important;
-        display: flex; flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        text-align: center !important;
+        color: #ffffff !important; font-family: 'Montserrat', sans-serif !important;
+        font-weight: 700 !important; text-transform: uppercase;
+    }
+
+    /* --- AJUSTES PARA TELEMÓVEL --- */
+    @media screen and (max-width: 736px) {
+        #header { min-height: 60vh !important; padding: 3em 10px !important; }
+        .logo-button img { height: 110px !important; }
+        #header h1 span { font-size: 1.4em !important; }
+        
+        /* FIX DO MENU */
+        #nav { 
+            position: relative !important; top: 0 !important; 
+            background: #2E5A27 !important; 
+            margin-top: 20px !important; padding: 10px 0 !important;
+            border-radius: 5px !important;
+        }
+        
+        #nav ul li { 
+            display: block !important; margin: 10px 0 !important; 
+            border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 10px;
+        }
+
+        #nav ul li:last-child { border: none !important; }
+
+        .perfil-foto img { width: 150px; height: 150px; } /* Foto um pouco menor no tlm */
+        .caixa-texto { text-align: center !important; font-size: 1em; }
     }
 </style>
 </head>
