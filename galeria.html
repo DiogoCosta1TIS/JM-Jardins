@@ -1,16 +1,16 @@
 <!DOCTYPE html>
 <html lang="pt">
 <head>
-<meta charset="UTF-8">
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>JM Jardins - Galeria</title>
+    <title>JM Jardins - Galeria</title>
     
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="assets/css/main.css">
     <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
     
 <style>
-    /* --- ESTRUTURA TOPO (IGUAL À INDEX) --- */
+    /* --- TOPO PADRÃO --- */
     #header {
         background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('img/image jardim.jpg') !important; 
         background-size: cover !important;
@@ -22,104 +22,93 @@
         flex-direction: column;
         align-items: center;
         border: none !important;
-        margin-bottom: 0 !important;
         padding: 0 !important;
     }
 
-    #header:before, #header:after { display: none !important; background: none !important; }
+    #header:before, #header:after { display: none !important; }
     
     #nav {
         position: absolute; top: 20px;
         background: transparent !important;
-        border: none !important; box-shadow: none !important;
         width: 100%; z-index: 100;
-    }
-
-    #nav ul { list-style: none; margin: 0; padding: 0; text-align: center; }
-    #nav ul li { display: inline-block; margin: 0 15px; }
-
-    #nav ul li a {
-        color: #ffffff !important;
-        font-family: 'Montserrat', sans-serif !important; font-weight: 700;
-        text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
-        text-decoration: none;
-    }
-
-    #header h1, #header h1 span, #header p {
-        color: #ffffff !important;
-        margin: 0 !important; text-transform: uppercase; 
-        font-family: 'Montserrat', sans-serif !important; 
-        text-shadow: 2px 2px 4px rgba(0,0,0,0.7);
         text-align: center;
     }
 
-    #header h1 span { font-size: 2.0em; letter-spacing: 4px; font-weight: 900; }
-    #header p { letter-spacing: 2px; font-size: 1.1em; margin-top: 10px !important; font-weight: 400; }
+    #nav ul { list-style: none; padding: 0; }
+    #nav ul li { display: inline-block; margin: 0 15px; }
+    #nav ul li a {
+        color: #ffffff !important;
+        font-family: 'Montserrat', sans-serif; font-weight: 700;
+        text-decoration: none;
+        text-transform: uppercase;
+    }
 
-    .logo-center { margin: 0 auto 1.5em auto; display: block; text-align: center; }
-    .logo-button img { width: auto; height: 180px; }
+    #header h1 span { 
+        font-size: 2.2em; letter-spacing: 4px; font-weight: 900; 
+        color: #fff !important; text-shadow: 2px 2px 4px #000;
+    }
 
-    /* --- GALERIA DE FOTOS --- */
+    .logo-button img { height: 160px; width: auto; }
+
+    /* --- GALERIA "ARRUMADA" --- */
     .galeria-fundo {
         background-color: #ffffff; 
         padding: 4em 20px;
-        text-align: center;
+        /* FLEXBOX MAGICO */
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 20px; /* Espaço igual entre fotos */
     }
 
     .galeria-fundo img {
-        width: 300px; 
+        width: 350px; /* Tamanho fixo po PC */
         height: 250px;
-        object-fit: cover; 
-        margin: 15px;
-        border: 2px solid #2E5A27; /* Borda verde para combinar */
+        object-fit: cover; /* Não deixa a imagem esticar/esmagar */
+        border: 3px solid #2E5A27; 
         border-radius: 8px;
-        transition: transform 0.3s ease;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        transition: 0.3s;
     }
 
-    .galeria-fundo img:hover { transform: scale(1.05); }
+    .galeria-fundo img:hover { transform: scale(1.03); }
 
-    /* --- FOOTER --- */
+    /* --- RODAPE --- */
     #footer {
         background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('img/image jardim.jpg') !important;
         background-size: cover !important; padding: 4em 0 !important;
-        background-position: center !important; text-align: center !important;
+        text-align: center !important;
     }
 
-    #footer p {
-        color: #ffffff !important; font-family: 'Montserrat', sans-serif !important;
-        font-weight: 700 !important; text-transform: uppercase;
-        display: flex; flex-direction: column; align-items: center;
-    }
+    #footer p { color: #ffffff !important; font-weight: 700; text-transform: uppercase; }
 
-    /* --- AJUSTES FINAIS PARA TELEMÓVEL --- */
+    /* --- AJUSTES TLM (MOBILE) --- */
     @media screen and (max-width: 736px) {
-        #header { min-height: 60vh !important; padding: 3em 10px !important; }
-        .logo-button img { height: 110px !important; }
-        #header h1 span { font-size: 1.4em !important; }
+        #header { min-height: 60vh !important; }
+        .logo-button img { height: 100px !important; }
+        #header h1 span { font-size: 1.5em !important; }
         
-        /* FIX DO MENU (IGUAL À INDEX) */
+        /* FIX DO MENU */
         #nav { 
             position: relative !important; top: 0 !important; 
             background: #2E5A27 !important; 
             margin-top: 20px !important; padding: 10px 0 !important;
-            border-radius: 5px !important;
+            display: block !important;
+            border-radius: 5px;
         }
         
         #nav ul li { 
             display: block !important; 
-            margin: 10px 0 !important; 
-            border-bottom: 1px solid rgba(255,255,255,0.1);
-            padding-bottom: 10px;
+            padding: 10px 0 !important;
+            border-bottom: 1px solid rgba(255,255,255,0.1); 
         }
 
-        #nav ul li:last-child { border: none !important; }
-
-        /* FOTOS NA GALERIA MOBILE */
+        /* GALERIA NO TLM */
         .galeria-fundo { padding: 2em 10px !important; }
         .galeria-fundo img { 
-            width: 95% !important; 
+            width: 100% !important; /* Foto ocupa a largura toda */
             height: auto !important; 
-            margin: 10px 0 !important; 
+            margin: 0 !important; 
         }
     }
 </style>
