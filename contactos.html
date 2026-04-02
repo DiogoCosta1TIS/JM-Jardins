@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     
 <style>
-    /* header copiado das outras pags */
+    /* --- ESTRUTURA GERAL (PC E MOBILE) --- */
     #header {
         background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('img/image jardim.jpg') !important; 
         background-size: cover !important;
@@ -37,151 +37,97 @@
         width: 100%; z-index: 100;
     }
 
+    #nav ul { list-style: none; margin: 0; padding: 0; text-align: center; }
+    #nav ul li { display: inline-block; margin: 0 15px; }
+
     #nav ul li a {
         color: #ffffff !important;
         font-family: 'Montserrat', sans-serif !important; font-weight: 700;
         text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+        text-decoration: none;
     }
 
-    #header h1, #header p {
+    #header h1, #header h1 span, #header p {
         color: #ffffff !important;
         margin: 0 !important; text-transform: uppercase; 
         font-family: 'Montserrat', sans-serif !important; 
         text-shadow: 2px 2px 4px rgba(0,0,0,0.7);
-    }
-
-    #header p {
-        letter-spacing: 2px; font-size: 1.1em;
-        margin-top: 10px !important; font-weight: 400;
-    }
-
-    /* logo como botao centrado */
-    .logo-center { margin: 0 auto 1.5em auto; display: block; }
-    .logo-button img { width: auto; height: 180px; }
-
-    #header h1 span { 
-        font-size: 2.0em; color: #ffffff !important; 
-        letter-spacing: 4px; font-weight: 900; 
-        text-shadow: 2px 2px 4px rgba(0,0,0,0.7); 
-    }
-
-    /* fundo da secção de contactos */
-    .contactos-fundo {
-        background-color: #ffffff; 
-        padding: 4em 0;
         text-align: center;
     }
 
-    /* css po formulario - VERDE */
+    #header h1 span { font-size: 2.0em; letter-spacing: 4px; font-weight: 900; }
+    #header p { letter-spacing: 2px; font-size: 1.1em; margin-top: 10px !important; font-weight: 400; }
+
+    .logo-center { margin: 0 auto 1.5em auto; display: block; text-align: center; }
+    .logo-button img { width: auto; height: 180px; }
+
+    /* --- SECÇÃO CONTACTOS & FORMULÁRIO --- */
+    .contactos-fundo { background-color: #ffffff; padding: 4em 0; text-align: center; }
+
     .caixa-formulario {
-        max-width: 600px;
-        margin: 0 auto;
-        background: #2E5A27; /* Verde escuro do tema */
-        padding: 40px;
-        border-radius: 8px;
-        box-shadow: 2px 2px 15px rgba(0,0,0,0.15); /* sombra um bocado mais forte */
+        max-width: 600px; margin: 0 auto;
+        background: #2E5A27; padding: 40px;
+        border-radius: 8px; box-shadow: 2px 2px 15px rgba(0,0,0,0.15);
         text-align: left; 
     }
 
-    /* texto das labels agora a branco po contraste */
     .caixa-formulario label {
-        font-family: 'Montserrat', sans-serif;
-        font-weight: 700; color: #ffffff;
-        display: block; margin-bottom: 8px;
+        font-family: 'Montserrat', sans-serif; font-weight: 700; 
+        color: #ffffff; display: block; margin-bottom: 8px;
     }
 
-    /* inputs e a caixa de mensagem */
     .caixa-formulario input, .caixa-formulario textarea {
-        width: 100%;
-        padding: 12px;
-        margin-bottom: 20px;
-        border: none; /* tirei a borda pa ficar mais clean no fundo verde */
-        border-radius: 4px;
-        font-family: 'Montserrat', sans-serif;
-        font-size: 1em;
+        width: 100%; padding: 12px; margin-bottom: 20px;
+        border: none; border-radius: 4px; font-family: 'Montserrat', sans-serif;
     }
 
-    /* o botao de enviar */
     .caixa-formulario button {
-        background-color: #111111; /* Preto para destacar no verde */
-        color: #ffffff;
+        background-color: #111111; color: #ffffff;
         font-family: 'Montserrat', sans-serif; font-weight: 700;
-        padding: 15px 30px;
-        border: none; border-radius: 5px;
-        cursor: pointer;
-        text-transform: uppercase;
-        width: 100%; 
-        letter-spacing: 1px;
+        padding: 15px 30px; border: none; border-radius: 5px;
+        cursor: pointer; text-transform: uppercase; width: 100%; 
     }
 
-    .caixa-formulario button:hover {
-        background-color: #333333; 
-    }
-
-    /* css po bloco de contactos rápidos (telefone e whatsapp) */
     .info-contacto-rapido {
-        text-align: center;
-        margin-bottom: 30px;
-        padding-bottom: 20px;
-        border-bottom: 1px solid rgba(255, 255, 255, 0.2); /* Borda branca muito suave pa separar */
+        text-align: center; margin-bottom: 30px; padding-bottom: 20px;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.2);
     }
 
-    .info-contacto-rapido div {
-        display: block; /* pa meter um por baixo do outro */
-        color: #ffffff !important;
-        font-family: 'Montserrat', sans-serif;
-        font-weight: 400;
-        font-size: 1.1em;
-        margin: 8px auto; /* espacamento entre eles */
-    }
+    .info-contacto-rapido div { color: #ffffff !important; margin: 8px auto; }
+    .info-contacto-rapido a { color: #ffffff !important; text-decoration: none; font-weight: 700; }
 
-    .info-contacto-rapido i {
-        margin-right: 10px;
-        font-size: 1.2em;
-    }
-
-    .info-contacto-rapido a {
-        color: #ffffff !important;
-        text-decoration: none;
-        font-weight: 700; /* deixar o numero em negrito */
-    }
-
-    /* footer do costume */
+    /* --- FOOTER --- */
     #footer {
-        border: none !important;
         background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('img/image jardim.jpg') !important;
-        background-size: cover !important;
-        padding: 4em 0 !important;
-        background-position: center !important; background-attachment: fixed !important;
-        display: flex; flex-direction: column; justify-content: center; align-items: center;
-        text-align: center !important;
+        background-size: cover !important; padding: 4em 0 !important;
+        background-position: center !important; text-align: center !important;
     }
 
-    #footer p {
-        color: #ffffff !important; font-size: 1em !important;
-        font-family: 'Montserrat', sans-serif !important;
-        font-weight: 700 !important; margin: 5px auto !important;
-        text-transform: uppercase;
-        text-shadow: 2px 2px 4px rgba(0,0,0,0.8);
-        border: none !important; padding: 0 !important;
-        display: flex; flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        text-align: center !important;
-    }
-
-    /* --- AJUSTES PARA TELEMÓVEL --- */
+    /* --- AJUSTES FINAIS PARA TELEMÓVEL (O QUE ESTAVA A DAR ERRO) --- */
     @media screen and (max-width: 736px) {
-        #header { min-height: 40vh !important; padding: 2em 0 !important; }
-        .logo-button img { height: 100px; }
-        #header h1 span { font-size: 1.4em; letter-spacing: 2px; }
+        #header { min-height: 60vh !important; padding: 3em 10px !important; }
+        .logo-button img { height: 110px !important; }
+        #header h1 span { font-size: 1.4em !important; }
         
-        #nav { position: relative; top: 0; background: #222 !important; }
-        #nav ul li { display: block; border-bottom: 1px solid rgba(255,255,255,0.1); }
+        /* FIX DO MENU: Lista vertical organizada */
+        #nav { 
+            position: relative !important; top: 0 !important; 
+            background: #2E5A27 !important; /* Verde da empresa */
+            margin-top: 20px !important; padding: 10px 0 !important;
+            border-radius: 5px !important;
+        }
         
-        .contactos-fundo { padding: 2em 10px; }
-        .caixa-formulario { padding: 25px 20px; width: 100%; }
-        .info-contacto-rapido div { font-size: 1em; }
+        #nav ul li { 
+            display: block !important; /* Um por baixo do outro */
+            margin: 10px 0 !important; 
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+            padding-bottom: 10px;
+        }
+
+        #nav ul li:last-child { border: none !important; }
+
+        .caixa-formulario { width: 90% !important; padding: 20px !important; }
+        .contactos-fundo { padding: 2em 5px !important; }
     }
 </style>
 </head>
