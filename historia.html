@@ -1,16 +1,16 @@
 <!DOCTYPE html>
 <html lang="pt">
 <head>
-<meta charset="UTF-8">
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>JM Jardins - Sobre Nós</title>
+    <title>JM Jardins - Sobre Nós</title>
     
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="assets/css/main.css">
     <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
     
 <style>
-    /* --- ESTRUTURA TOPO (PADRÃO JM JARDINS) --- */
+    /* --- PARTE DE CIMA (HEADER) --- */
     #header {
         background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('img/image jardim.jpg') !important; 
         background-size: cover !important;
@@ -22,50 +22,51 @@
         flex-direction: column;
         align-items: center;
         border: none !important;
-        margin-bottom: 0 !important;
         padding: 0 !important;
     }
 
+    /* Limpar lixo do template */
     #header:before, #header:after { display: none !important; background: none !important; }
     
+    /* MENU LA DE TOPO */
     #nav {
         position: absolute; top: 20px;
         background: transparent !important;
-        border: none !important; box-shadow: none !important;
         width: 100%; z-index: 100;
+        text-align: center;
     }
 
-    #nav ul { list-style: none; margin: 0; padding: 0; text-align: center; }
+    #nav ul { list-style: none; margin: 0; padding: 0; }
     #nav ul li { display: inline-block; margin: 0 15px; }
 
     #nav ul li a {
         color: #ffffff !important;
-        font-family: 'Montserrat', sans-serif !important; font-weight: 700;
+        font-family: 'Montserrat', sans-serif !important; 
+        font-weight: 700;
         text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
         text-decoration: none;
     }
 
-    #header h1, #header h1 span, #header p {
-        color: #ffffff !important;
-        margin: 0 !important; text-transform: uppercase; 
-        font-family: 'Montserrat', sans-serif !important; 
+    #header h1 span { 
+        font-size: 2.0em; 
+        letter-spacing: 4px; 
+        font-weight: 900; 
+        color: #fff !important;
         text-shadow: 2px 2px 4px rgba(0,0,0,0.7);
-        text-align: center;
     }
 
-    #header h1 span { font-size: 2.0em; letter-spacing: 4px; font-weight: 900; }
-    #header p { letter-spacing: 2px; font-size: 1.1em; margin-top: 10px !important; font-weight: 400; }
-
-    .logo-center { margin: 0 auto 1.5em auto; display: block; text-align: center; }
     .logo-button img { width: auto; height: 180px; }
 
-    /* --- SECÇÃO HISTÓRIA --- */
+    /* --- CONTEUDO DA HISTORIA --- */
     .historia-fundo { background-color: #ffffff; padding: 4em 0; text-align: center; }
 
+    /* Foto do Sr Jose redonda */
     .perfil-foto { text-align: center; margin-bottom: 25px; }
     .perfil-foto img {
-        width: 200px; height: 200px; object-fit: cover; 
-        border-radius: 50%; border: 5px solid #2E5A27; /* Borda verde po tema */
+        width: 200px; height: 200px; 
+        object-fit: cover; 
+        border-radius: 50%; 
+        border: 5px solid #2E5A27; /* Verde da JM */
         box-shadow: 0 4px 15px rgba(0,0,0,0.2); 
     }
 
@@ -77,40 +78,46 @@
 
     h2, h3 { text-transform: uppercase !important; color: #2E5A27; }
 
-    /* --- FOOTER --- */
+    /* --- RODAPE --- */
     #footer {
         background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('img/image jardim.jpg') !important;
         background-size: cover !important; padding: 4em 0 !important;
-        background-position: center !important; text-align: center !important;
+        text-align: center !important;
     }
 
     #footer p {
-        color: #ffffff !important; font-family: 'Montserrat', sans-serif !important;
-        font-weight: 700 !important; text-transform: uppercase;
+        color: #ffffff !important; 
+        font-family: 'Montserrat', sans-serif !important;
+        font-weight: 700 !important; 
+        text-transform: uppercase;
     }
 
-    /* --- AJUSTES PARA TELEMÓVEL --- */
+    /* --- AJUSTES PA TELEMOVEL --- */
     @media screen and (max-width: 736px) {
-        #header { min-height: 60vh !important; padding: 3em 10px !important; }
+        #header { min-height: 60vh !important; }
         .logo-button img { height: 110px !important; }
         #header h1 span { font-size: 1.4em !important; }
         
-        /* FIX DO MENU */
+        /* Menu Mobile Verde */
         #nav { 
             position: relative !important; top: 0 !important; 
             background: #2E5A27 !important; 
-            margin-top: 20px !important; padding: 10px 0 !important;
+            margin-top: 20px !important; 
+            padding: 10px 0 !important;
             border-radius: 5px !important;
+            display: block !important;
         }
         
         #nav ul li { 
-            display: block !important; margin: 10px 0 !important; 
-            border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 10px;
+            display: block !important; 
+            margin: 0 !important; 
+            padding: 10px 0 !important;
+            border-bottom: 1px solid rgba(255,255,255,0.1); 
         }
 
         #nav ul li:last-child { border: none !important; }
 
-        .perfil-foto img { width: 150px; height: 150px; } /* Foto um pouco menor no tlm */
+        .perfil-foto img { width: 150px; height: 150px; }
         .caixa-texto { text-align: center !important; font-size: 1em; }
     }
 </style>
